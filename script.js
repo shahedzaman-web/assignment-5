@@ -6,13 +6,15 @@ const itemDetailsSection = document.getElementById('itemDetails');
 const foodItems = document.getElementById('foodItems');
 const emptyMessage = document.getElementById("emptyMessage");
 const notFoundMessage = document.getElementById("notFoundMessage");
+const mealDetailsInfo = document.getElementById("mealDetailsInfo");
 
-//                Close button Option
-
-const closeButton = () => {
+//                                       Close button Option
+const closeDetailsButton = () => {
 
     detailsAreaSection.style.display = 'none';
 };
+
+
 const closeEmptyButton = () => {
     emptyMessage.style.display = 'none';
 }
@@ -40,7 +42,7 @@ const searchBtnClicked = () => {
           </div>`;
                 });
                 foodItems.innerHTML = listItem;
-                foodItems.style.display = 'grid';
+
                 detailsAreaSection.style.display = 'none';
 
             } else {
@@ -54,27 +56,27 @@ const searchBtnClicked = () => {
     searchInput.value = '';
 };
 
-//                                     Item Details
+//                                       Food Item Details
 const itemDetails = (itemName) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${itemName}`)
         .then((res) => res.json())
         .then((data) => {
-            const mealDetailsInfo = document.getElementById("mealDetailsInfo");
+
             const mealsItem = data.meals[0];
 
             itemDetailsSection.innerHTML = `
        <div id="mealDetailsInfo">
        <div class="row">
-       <div class="col-5">
+       <div class="col-6">
        <div class="details-img ">
         
-       <img 
+       <img id="details-img" 
          src="${mealsItem.strMealThumb}"
          alt="${mealsItem.strMeal}"
        />
      </div>
      </div>
-     <div class="col-7">
+     <div class="col-6">
      <h2 >${mealsItem.strMeal}</h2>
      <h4>Ingredients</h4>
 
@@ -85,14 +87,17 @@ const itemDetails = (itemName) => {
        <p><i class="font-color fas fa-check"></i>${mealsItem.strMeasure4} ${mealsItem.strIngredient4}</p>
        <p><i class="font-color fas fa-check"></i>${mealsItem.strMeasure5} ${mealsItem.strIngredient5}</p>
        <p><i class="font-color fas fa-check"></i>${mealsItem.strMeasure6} ${mealsItem.strIngredient6}</p>
-       
+       <p><i class="font-color fas fa-check"></i>${mealsItem.strMeasure7} ${mealsItem.strIngredient7}</p>
+       <p><i class="font-color fas fa-check"></i>${mealsItem.strMeasure8} ${mealsItem.strIngredient8}</p>
+       <p><i class="font-color fas fa-check"></i>${mealsItem.strMeasure9} ${mealsItem.strIngredient9}</p>
+       <p><i class="font-color fas fa-check"></i>${mealsItem.strMeasure10} ${mealsItem.strIngredient10}</p>
      </div>
-     
+     <button onclick="closeDetailsButton()" class="closeBtnIcon"><i class="fas fa-times"></i></button>
      </div>
        </div>
        </div>
       `;
-            foodItems.style.display = 'none';
+
             detailsAreaSection.style.display = 'block';
         });
 };
