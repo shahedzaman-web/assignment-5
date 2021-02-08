@@ -117,6 +117,29 @@ img {
     margin-bottom: 10px;
 }
 
+#mealDetailsInfo {
+    width: 80%;
+    height: 600px;
+    background-color: #f1f6f9;
+    margin-top: 140px;
+    position: absolute;
+    padding: 50px;
+    left: 100px;
+    top: 5px;
+    border-radius: 5px;
+}
+
+.font-color {
+    background-color: #F06C4E;
+    color: white;
+    padding: 4px;
+}
+
+#details-img {
+    padding-top: 100px;
+    border-radius: 10px;
+}
+
 
 /* Close button */
 
@@ -156,22 +179,4 @@ img {
 #notFoundMessage {
     padding: 150px;
     display: none;
-}
-
-#mealDetailsInfo {
-    width: 80%;
-    height: 400px;
-    background-color: #f1f6f9;
-    margin-top: 140px;
-    position: absolute;
-    padding: 50px;
-    left: 100px;
-    top: 5px;
-    border-radius: 5px;
-}
-
-.font-color {
-    background-color: #F06C4E;
-    color: white;
-    padding: 4px;
 }
