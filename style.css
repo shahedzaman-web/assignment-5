@@ -1,13 +1,24 @@
+/* Main Part Style */
+
 body {
     font-family: 'Raleway', sans-serif;
+    background-color: #e8e8e8;
+}
+
+img {
+    max-width: 100%;
 }
 
 .left {
     padding-left: 600px;
 }
 
-img {
-    max-width: 100%;
+
+/* Logo Style */
+
+#logo {
+    font-size: 22px;
+    color: #fd3a69;
 }
 
 
@@ -71,7 +82,7 @@ img {
 }
 
 .item-details {
-    background-color: #f8f7f5;
+    background-color: #f4f9f9;
     width: 500px;
     padding: 30px;
     margin: 0 auto;
@@ -142,19 +153,25 @@ img {
     display: none;
 }
 
+#notFoundMessage {
+    padding: 150px;
+    display: none;
+}
+
 #mealDetailsInfo {
     width: 80%;
     height: 400px;
-    background-color: #fff;
+    background-color: #f1f6f9;
     margin-top: 140px;
     position: absolute;
     padding: 50px;
     left: 100px;
+    top: 5px;
+    border-radius: 5px;
 }
 
 .font-color {
     background-color: #F06C4E;
     color: white;
-    padding: 3px;
-    border-left: 8px;
+    padding: 4px;
 }
